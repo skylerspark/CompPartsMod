@@ -2,24 +2,24 @@ modLoader="javafml" #mandatory
 loaderVersion="[28,)" #mandatory (28 is current forge version)
 [[mods]] #mandatory
 modId="computeparts" #mandatory
-version="1.0" #mandatory
+version="1.14.4-0.1.0" #mandatory
 displayName="Computer Parts" #mandatory
 # displayURL="http://example.com/" #optional
 # logoFile="examplemod.png" #optional
-credits="Credit to MisterSirCode for Models/Textures." #optional
-authors="SkylerSpark, MisterSirCode" #optional
+credits="MisterSirCode Made the Models :P" #optional
+authors="MisterSirCode, SkylerSpark" #optional
 description='''
-Computer Parts is a basic mod that adds a few IT Bits and Bobs, mostly decoration, but plans for usable items/blocks.
-
-Currently adds Server Blocks.
+Computer things...
 '''
-[[dependencies.computeparts]] #optional
+
+[[dependencies.examplemod]] #optional
     modId="forge" #mandatory
     mandatory=true #mandatory
     versionRange="[28,)" #mandatory
     ordering="NONE"
     side="BOTH"
-[[dependencies.computeparts]]
+
+[[dependencies.examplemod]]
     modId="minecraft"
     mandatory=true
     versionRange="[1.14.4]"
