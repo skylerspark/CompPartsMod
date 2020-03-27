@@ -1,26 +1,3 @@
-Build: 1.14.4-28.2.3 - Fri Feb 28 21:44:10 GMT 2020
-	David Quintana:
-		Add AT entries for some implicit constructors that are protected, but the development setup makes public without telling anyone.
-
-=========
-Build: 1.14.4-28.2.2 - Fri Feb 28 17:27:08 GMT 2020
-	David Quintana:
-		Backport implementation of the new model system from 1.15: (#6180)
-		
-		- Extended block model format to support a "loader" value, as an alternative to "elements.
-		- Extended block model format to support "gui_3d":false as a way to mark a model as being intended to be flat and lit from the front.
-		    (No this is not equivalent to the  "gui_light" flag in 1.15.2. It changes more than just the light direction)
-		- Added a new OBJ loader designed from the ground up to work with the new model system.
-		- Added stock models to serve as parent models when using custom loaders (forge:item/default, forge:item/default-tool, and forge:block/default).
-		- Added stock white texture (forge:white) for use in loaders that want to draw untextured geometry.
-		- Deprecated the old loader components, since they are gone in 1.15 already.
-
-=========
-Build: 1.14.4-28.2.1 - Fri Feb 14 20:35:33 GMT 2020
-	goto.minecraft:
-		Fix PlayerChangedDimensionEvent using incorrect from dimension argument in ServerPlayerEntity.teleport.
-
-=========
 Build: 1.14.4-28.2.0 - Mon Feb 03 21:41:57 GMT 2020
 	lex:
 		Update binpatcher version to decrease installer download size.
