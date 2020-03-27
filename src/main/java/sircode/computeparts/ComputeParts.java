@@ -1,4 +1,7 @@
 package sircode.computeparts;
+import net.minecraft.item.Item;
+import net.minecraft.item.ItemGroup;
+import net.minecraft.util.ResourceLocation;
 import net.minecraftforge.common.MinecraftForge;
 import net.minecraftforge.event.RegistryEvent;
 import net.minecraftforge.eventbus.api.SubscribeEvent;
@@ -10,6 +13,8 @@ import net.minecraftforge.fml.event.lifecycle.InterModEnqueueEvent;
 import net.minecraftforge.fml.event.lifecycle.InterModProcessEvent;
 import net.minecraftforge.fml.event.server.FMLServerStartingEvent;
 import net.minecraftforge.fml.javafmlmod.FMLJavaModLoadingContext;
+import sircode.computeparts.lists.ItemList;
+
 import org.apache.logging.log4j.LogManager;
 import org.apache.logging.log4j.Logger;
 import java.util.stream.Collectors;
@@ -33,9 +38,27 @@ public class ComputeParts
 
     private void setup(final FMLCommonSetupEvent event)
     {
+    	
     }
 
     private void clientRegistries(final FMLClientSetupEvent event) {
         LOGGER.info("Got game settings {}", event.getMinecraftSupplier().get().gameSettings);
+    }
+    
+    @Mod.EventBusSubscriber(bus=Mod.EventBusSubscriber.Bus.MOD)
+    public static class RegistryEvents
+    {
+    	@SubscribeEvent
+    	public static void RegisterItems(final RegistryEvent.Register<Item> event)
+    	{
+    		event.getRegistry().registerAll(
+    			ItemList.computer_sword = new Item(new Item.Properties().group(ItemGroup.COMBAT)).setRegistryName(location("computer_sword"))
+    		);
+    	}
+    	
+    	private static ResourceLocation location(String name)
+    	{
+    		return new ResourceLocation(modid, name);
+    	}
     }
 }
