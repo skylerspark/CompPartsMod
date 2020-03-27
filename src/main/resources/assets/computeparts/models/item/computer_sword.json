@@ -2,6 +2,6 @@
     "parent": "minecraft:item/generated",
     "textures":
 	{
-        "layer0": "computeparts:computer_sword"
+        "layer0": "computeparts:item/computer_sword"
     }
 }
